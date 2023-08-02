@@ -11,7 +11,7 @@ function hello(event) {
         phno: phno
     };
     var data= JSON.stringify(formData)
-    localStorage.setItem('formData',data);
+    localStorage.setItem(email,data);
    
     //console.log(JSON.parse(data))
-}
+} 
