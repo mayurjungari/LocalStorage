@@ -10,6 +10,8 @@ function hello(event) {
         email: email,
         phno: phno
     };
-
-    localStorage.setItem('formData', JSON.stringify(formData));
+    var data= JSON.stringify(formData)
+    localStorage.setItem('formData',data);
+   
+    //console.log(JSON.parse(data))
 }
