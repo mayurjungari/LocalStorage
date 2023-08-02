@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOK APPOINTMENT</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <style>
+       
+        body{
+            padding: 5cm;
+            background-image: url(th\ \(1\).jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            
+           
+        }
+        .k{
+            font-weight: bold;
+        }
+       
+    </style>
+</head>
+<body >
+    <div class="container" style=" background-color:white; max-width: 15cm; padding: 1 cm;;">
+    <header >
+        <div class="container " style="background-color: white; border-bottom: 2px double black; padding-top: 1cm;">
+           
+            <h3 style="text-align: center; color: orange;">BOOK A CALL</h3>
+            <p >Book a Call slot and our Representative will call you within 1 hour </p>
+          
+        </div>
+   </header>
+   <hr>
+   <div class="container" style="margin-top: 1cm;" >
+    <form id="adform" class="form-check-input" onsubmit="hello(event)">
+        <div class="form-group k" >
+       
+        <label for="name"> NAME :-</label>
+        <input type="text" id="name" class="form-control">
+        </div>  
+        <div class="form-group k" >
+       
+            <label for="email"> Email :-</label>
+            <input type="email" id="email" class="form-control">
+            </div>
+        <div class="form-group k" >
+           
+            <label for="phno"> PHONE NUMBER :-</label>
+            <input type="tel" id="phno" class="form-control">
+            </div>
+            <div class="form-group k" >
+           
+                Time For Call :-
+               <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="date" class="form-control p" >
+                    </div>
+                    <div class="col-md-6">
+                        <input type="time" class="form-control p">
+                    </div>
+                </div>
+               </div>
+            <input type="submit" class="form-control btn-warning" value="GET A CALL" style="padding-top: 0.5;" >
+
+    </div>
+    <script src="book.js"></script>
+
+
+
+
+
+
+
+    </form>
+ </div>
+
+</body>
+</html>
