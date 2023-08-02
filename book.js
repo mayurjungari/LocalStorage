@@ -19,11 +19,17 @@ function storeToLocalStorage(event) {
     li.className='listy'
     var textnode=document.createTextNode(name+"-"+email+"-"+phno);
     li.appendChild(textnode)
+    //deletebutton
     var deletebtn=document.createElement('button')
     deletebtn.className='btn-dark delete'
     deletebtn.appendChild(document.createTextNode('delete'));
-   
     li.appendChild(deletebtn)
+    //editbutton
+    var editbtn=document.createElement('button')
+    editbtn.className='btn-primary edit'
+    editbtn.appendChild(document.createTextNode('edit'))
+    li.appendChild(editbtn)
+   
     unorderList.appendChild(li);
    
 } 
@@ -45,4 +51,17 @@ function deleteData(event)
       
       
     }
+}
+function editData(event)
+{
+    var unorderList=document.getElementById('listitem')
+    if(event.target.classList.contains('edit'))
+    var email=event.target.parentNode.textContent.split('-')[1].trim();
+    localStorage.removeItem(email)
+    var li=event.target.parentElement
+    unorderList.removeChild(li)
+    document.getElementById('name').focus();
+   
+
+   
 }
