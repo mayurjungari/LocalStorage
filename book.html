@@ -33,7 +33,7 @@
    </header>
    <hr>
    <div class="container" style="margin-top: 1cm;" >
-    <form id="adform" class="form-check-input" onsubmit="hello(event)">
+    <form id="adform" class="form-check-input" onsubmit="storeToLocalStorage(event)">
         <div class="form-group k" >
        
         <label for="name"> NAME :-</label>
@@ -65,16 +65,14 @@
             <input type="submit" class="form-control btn-warning" value="GET A CALL" style="padding-top: 0.5;" >
 
     </div>
-    <script src="book.js"></script>
-
-
-
-
-
-
-
     </form>
  </div>
+ </div>
+ <ul id="listitem" class="list-group li" onclick="deleteData(event)">
+    <!-- <li class="listy">Mayur-mayurjungari1@gmail.com-9022248233 <button class="btn-dark delete">delete</button></li> -->
 
+ </ul>
+
+ <script src="book.js"></script>
 </body>
 </html>

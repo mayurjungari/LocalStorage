@@ -1,4 +1,4 @@
-function hello(event) {
+function storeToLocalStorage(event) {
     event.preventDefault();
 
     var name = document.getElementById('name').value;
@@ -12,6 +12,37 @@ function hello(event) {
     };
     var data= JSON.stringify(formData)
     localStorage.setItem(email,data);
+
+    var unorderList=document.getElementById('listitem')
+     
+    var li=document.createElement('li');
+    li.className='listy'
+    var textnode=document.createTextNode(name+"-"+email+"-"+phno);
+    li.appendChild(textnode)
+    var deletebtn=document.createElement('button')
+    deletebtn.className='btn-dark delete'
+    deletebtn.appendChild(document.createTextNode('delete'));
    
-    //console.log(JSON.parse(data))
+    li.appendChild(deletebtn)
+    unorderList.appendChild(li);
+   
 } 
+
+function deleteData(event)
+{
+    event.preventDefault();
+    var email=event.target.parentNode.textContent.split('-')[1].trim();
+   
+    var unorderList=document.getElementById('listitem')
+    if(event.target.classList.contains('delete'))
+    {
+        // remove item from local storage
+       localStorage.removeItem(email)
+      
+       var li=event.target.parentElement;
+       unorderList.removeChild(li)
+
+      
+      
+    }
+}
