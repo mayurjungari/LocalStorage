@@ -10,6 +10,17 @@ function storeToLocalStorage(event) {
         email: email,
         phno: phno
     };
+
+  axios.post("https://crudcrud.com/api/f110fc90dfc5476f958cab060a5d8e07/appointmentData",formData)
+  .then((respons)=>{
+    console.log(respons.data);
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+
+
+
     var data= JSON.stringify(formData)
     localStorage.setItem(email,data);
 
