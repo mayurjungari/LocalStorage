@@ -20,11 +20,20 @@ function storeToLocalStorage(event) {
   // .catch((err)=>{
   //   console.log(err)
   // })
-
+  axios.get("https://crudcrud.com/api/f110fc90dfc5476f958cab060a5d8e07/appointmentData")
+  .then((respons)=>{
+    for(var i=0;i<respons.data.length;i++)
+    {
+      console.log(respons.data[i])
+    }
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
 
 
     var data= JSON.stringify(formData)
-    localStorage.setItem(email,data);
+   // localStorage.setItem(email,data);
 
     function showUserOnScreen (formData)
     {
