@@ -51,7 +51,7 @@ function storeToLocalStorage(event) {
       unorderList.removeChild(li)
       var itemid=formData.id;
 
-      axios.delete(`https://crudcrud.com/api/f110fc90dfc5476f958cab060a5d8e07/appointmentData${itemid}`)
+      axios.delete(`https://crudcrud.com/api/f110fc90dfc5476f958cab060a5d8e07/appointmentData/${itemid}`)
       .then(respons=>{
         console.log(respons)
       })
@@ -63,8 +63,22 @@ function storeToLocalStorage(event) {
     const editbtn=document.createElement('input');
     editbtn.type="button"
     editbtn.value='edit';
+
+    var Updateddata={
+      name:'',
+      email:'',
+      phno:''
+    }
     editbtn.onclick=()=>{
       localStorage.removeItem(formData.email);
+      axios.put()
+      axios.put(`https://crudcrud.com/api/f110fc90dfc5476f958cab060a5d8e07/appointmentData/${itemid}`,Updateddata)
+      .then(respons=>{
+        console.log(respons)
+      })
+      .catch(error=>{
+        console.log(error)
+      })
       
       
     }
