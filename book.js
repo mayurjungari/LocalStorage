@@ -11,20 +11,20 @@ function storeToLocalStorage(event) {
         email: email,
         phno: phno
     };
-    showUserOnScreen(formData);
+   showUserOnScreen(formData);
 
-  // axios.post("https://crudcrud.com/api/f110fc90dfc5476f958cab060a5d8e07/appointmentData",formData)
-  // .then((respons)=>{
-  //   console.log(respons.data);
-  // })
-  // .catch((err)=>{
-  //   console.log(err)
-  // })
+  axios.post("https://crudcrud.com/api/f110fc90dfc5476f958cab060a5d8e07/appointmentData",formData)
+  .then((respons)=>{
+    console.log(respons.data);
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
   axios.get("https://crudcrud.com/api/f110fc90dfc5476f958cab060a5d8e07/appointmentData")
   .then((respons)=>{
     for(var i=0;i<respons.data.length;i++)
     {
-      console.log(respons.data[i])
+      showUserOnScreen(respons.data[i]);
     }
   })
   .catch((err)=>{
@@ -49,6 +49,15 @@ function storeToLocalStorage(event) {
     deletebtn.onclick=()=>{
       localStorage.removeItem(formData.email);
       unorderList.removeChild(li)
+      var itemid=formData.id;
+
+      axios.delete(`https://crudcrud.com/api/f110fc90dfc5476f958cab060a5d8e07/appointmentData${itemid}`)
+      .then(respons=>{
+        console.log(respons)
+      })
+      .catch(error=>{
+        console.log(error)
+      })
     }
     //edi
     const editbtn=document.createElement('input');
